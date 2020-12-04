@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace autorepair
 {
-    public partial class MainTable : Form
+    public partial class MainForm : Form
     {
-        public MainTable()
+        public MainForm()
         {
             InitializeComponent();
         }

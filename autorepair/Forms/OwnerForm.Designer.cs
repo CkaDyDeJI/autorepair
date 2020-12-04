@@ -1,7 +1,7 @@
 ﻿
 namespace autorepair
 {
-    partial class MainTable
+    partial class OwnerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@ namespace autorepair
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTable));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OwnerForm));
             this.kursachDataSet = new autorepair.KursachDataSet();
-            this.main_informationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.main_informationTableAdapter = new autorepair.KursachDataSetTableAdapters.main_informationTableAdapter();
+            this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ownerTableAdapter = new autorepair.KursachDataSetTableAdapters.ownerTableAdapter();
             this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
-            this.main_informationBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.ownerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -47,27 +47,20 @@ namespace autorepair
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.main_informationBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.main_informationDataGridView = new System.Windows.Forms.DataGridView();
+            this.ownerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.ownerDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingNavigator)).BeginInit();
-            this.main_informationBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerBindingNavigator)).BeginInit();
+            this.ownerBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerDataGridView)).BeginInit();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kursachDataSet
@@ -75,34 +68,34 @@ namespace autorepair
             this.kursachDataSet.DataSetName = "KursachDataSet";
             this.kursachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // main_informationBindingSource
+            // ownerBindingSource
             // 
-            this.main_informationBindingSource.DataMember = "main_information";
-            this.main_informationBindingSource.DataSource = this.kursachDataSet;
+            this.ownerBindingSource.DataMember = "owner";
+            this.ownerBindingSource.DataSource = this.kursachDataSet;
             // 
-            // main_informationTableAdapter
+            // ownerTableAdapter
             // 
-            this.main_informationTableAdapter.ClearBeforeFill = true;
+            this.ownerTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.autoTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.current_taskTableAdapter = null;
-            this.tableAdapterManager.ownerTableAdapter = null;
+            this.tableAdapterManager.ownerTableAdapter = this.ownerTableAdapter;
             this.tableAdapterManager.taskTableAdapter = null;
             this.tableAdapterManager.type_of_repairTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = autorepair.KursachDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.workerTableAdapter = null;
             // 
-            // main_informationBindingNavigator
+            // ownerBindingNavigator
             // 
-            this.main_informationBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.main_informationBindingNavigator.BindingSource = this.main_informationBindingSource;
-            this.main_informationBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.main_informationBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.main_informationBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ownerBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.ownerBindingNavigator.BindingSource = this.ownerBindingSource;
+            this.ownerBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.ownerBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.ownerBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.ownerBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -114,17 +107,17 @@ namespace autorepair
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.main_informationBindingNavigatorSaveItem});
-            this.main_informationBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.main_informationBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.main_informationBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.main_informationBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.main_informationBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.main_informationBindingNavigator.Name = "main_informationBindingNavigator";
-            this.main_informationBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.main_informationBindingNavigator.Size = new System.Drawing.Size(903, 25);
-            this.main_informationBindingNavigator.TabIndex = 0;
-            this.main_informationBindingNavigator.Text = "bindingNavigator1";
+            this.ownerBindingNavigatorSaveItem});
+            this.ownerBindingNavigator.Location = new System.Drawing.Point(3, 0);
+            this.ownerBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.ownerBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.ownerBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.ownerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.ownerBindingNavigator.Name = "ownerBindingNavigator";
+            this.ownerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.ownerBindingNavigator.Size = new System.Drawing.Size(278, 25);
+            this.ownerBindingNavigator.TabIndex = 0;
+            this.ownerBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -211,45 +204,36 @@ namespace autorepair
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // main_informationBindingNavigatorSaveItem
+            // ownerBindingNavigatorSaveItem
             // 
-            this.main_informationBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.main_informationBindingNavigatorSaveItem.Enabled = false;
-            this.main_informationBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("main_informationBindingNavigatorSaveItem.Image")));
-            this.main_informationBindingNavigatorSaveItem.Name = "main_informationBindingNavigatorSaveItem";
-            this.main_informationBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 20);
-            this.main_informationBindingNavigatorSaveItem.Text = "Save Data";
+            this.ownerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ownerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ownerBindingNavigatorSaveItem.Image")));
+            this.ownerBindingNavigatorSaveItem.Name = "ownerBindingNavigatorSaveItem";
+            this.ownerBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.ownerBindingNavigatorSaveItem.Text = "Save Data";
+            this.ownerBindingNavigatorSaveItem.Click += new System.EventHandler(this.ownerBindingNavigatorSaveItem_Click_1);
             // 
-            // main_informationDataGridView
+            // ownerDataGridView
             // 
-            this.main_informationDataGridView.AutoGenerateColumns = false;
-            this.main_informationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.main_informationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ownerDataGridView.AutoGenerateColumns = false;
+            this.ownerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ownerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ownerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.main_informationDataGridView.DataSource = this.main_informationBindingSource;
-            this.main_informationDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.main_informationDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.main_informationDataGridView.Name = "main_informationDataGridView";
-            this.main_informationDataGridView.Size = new System.Drawing.Size(903, 494);
-            this.main_informationDataGridView.TabIndex = 1;
+            this.dataGridViewTextBoxColumn3});
+            this.ownerDataGridView.DataSource = this.ownerBindingSource;
+            this.ownerDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ownerDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.ownerDataGridView.Name = "ownerDataGridView";
+            this.ownerDataGridView.RowHeadersVisible = false;
+            this.ownerDataGridView.Size = new System.Drawing.Size(800, 425);
+            this.ownerDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "owner_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "owner_id";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
@@ -264,100 +248,55 @@ namespace autorepair
             this.dataGridViewTextBoxColumn3.HeaderText = "adress";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn4
+            // toolStripContainer1
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "auto_id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "auto_id";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // dataGridViewTextBoxColumn5
+            // toolStripContainer1.ContentPanel
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "creator";
-            this.dataGridViewTextBoxColumn5.HeaderText = "creator";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.ownerDataGridView);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 425);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
+            this.toolStripContainer1.TabIndex = 2;
+            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // dataGridViewTextBoxColumn6
+            // toolStripContainer1.TopToolStripPanel
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "model";
-            this.dataGridViewTextBoxColumn6.HeaderText = "model";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.ownerBindingNavigator);
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "creation_date";
-            this.dataGridViewTextBoxColumn7.HeaderText = "creation_date";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "task_id";
-            this.dataGridViewTextBoxColumn8.HeaderText = "task_id";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "start_date";
-            this.dataGridViewTextBoxColumn9.HeaderText = "start_date";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "end_date";
-            this.dataGridViewTextBoxColumn10.HeaderText = "end_date";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn11.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn12.HeaderText = "description";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "worker_id";
-            this.dataGridViewTextBoxColumn13.HeaderText = "worker_id";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "worker_fio";
-            this.dataGridViewTextBoxColumn14.HeaderText = "worker_fio";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // MainTable
+            // OwnerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 519);
-            this.Controls.Add(this.main_informationDataGridView);
-            this.Controls.Add(this.main_informationBindingNavigator);
-            this.Name = "MainTable";
-            this.Text = "MainTable";
-            this.Load += new System.EventHandler(this.MainTable_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStripContainer1);
+            this.Name = "OwnerForm";
+            this.Text = "OwnerForm";
+            this.Load += new System.EventHandler(this.OwnerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingNavigator)).EndInit();
-            this.main_informationBindingNavigator.ResumeLayout(false);
-            this.main_informationBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerBindingNavigator)).EndInit();
+            this.ownerBindingNavigator.ResumeLayout(false);
+            this.ownerBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerDataGridView)).EndInit();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private KursachDataSet kursachDataSet;
-        private System.Windows.Forms.BindingSource main_informationBindingSource;
-        private KursachDataSetTableAdapters.main_informationTableAdapter main_informationTableAdapter;
+        private System.Windows.Forms.BindingSource ownerBindingSource;
+        private KursachDataSetTableAdapters.ownerTableAdapter ownerTableAdapter;
         private KursachDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator main_informationBindingNavigator;
+        private System.Windows.Forms.BindingNavigator ownerBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -369,21 +308,11 @@ namespace autorepair
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton main_informationBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView main_informationDataGridView;
+        private System.Windows.Forms.ToolStripButton ownerBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView ownerDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
     }
 }
