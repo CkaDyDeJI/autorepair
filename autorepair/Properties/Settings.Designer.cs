@@ -28,17 +28,6 @@ namespace autorepair.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Host=localhost;Database=Kursach;Username=postgres;Password=erti56caru;Persist Sec" +
             "urity Info=True")]
-        public string connString {
-            get {
-                return ((string)(this["connString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Host=localhost;Database=Kursach;Username=postgres;Password=erti56caru;Persist Sec" +
-            "urity Info=True")]
         public string KursachConnectionString {
             get {
                 return ((string)(this["KursachConnectionString"]));

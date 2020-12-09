@@ -31,12 +31,10 @@ namespace autorepair
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerForm));
-            this.kursachDataSet = new autorepair.KursachDataSet();
-            this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workerTableAdapter = new autorepair.KursachDataSetTableAdapters.workerTableAdapter();
-            this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
             this.workerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursachDataSet = new autorepair.KursachDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -48,45 +46,34 @@ namespace autorepair
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.workerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.workerDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).BeginInit();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.workerTableAdapter = new autorepair.KursachDataSetTableAdapters.workerTableAdapter();
+            this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingNavigator)).BeginInit();
             this.workerBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerDataGridView)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // kursachDataSet
-            // 
-            this.kursachDataSet.DataSetName = "KursachDataSet";
-            this.kursachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // workerBindingSource
-            // 
-            this.workerBindingSource.DataMember = "worker";
-            this.workerBindingSource.DataSource = this.kursachDataSet;
-            // 
-            // workerTableAdapter
-            // 
-            this.workerTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.autoTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.current_taskTableAdapter = null;
-            this.tableAdapterManager.ownerTableAdapter = null;
-            this.tableAdapterManager.taskTableAdapter = null;
-            this.tableAdapterManager.type_of_repairTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = autorepair.KursachDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.workerTableAdapter = this.workerTableAdapter;
             // 
             // workerBindingNavigator
             // 
@@ -107,7 +94,11 @@ namespace autorepair
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.workerBindingNavigatorSaveItem});
+            this.workerBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.toolStripComboBox1,
+            this.toolStripTextBox1,
+            this.toolStripButton1});
             this.workerBindingNavigator.Location = new System.Drawing.Point(3, 0);
             this.workerBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.workerBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -115,7 +106,7 @@ namespace autorepair
             this.workerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.workerBindingNavigator.Name = "workerBindingNavigator";
             this.workerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.workerBindingNavigator.Size = new System.Drawing.Size(278, 25);
+            this.workerBindingNavigator.Size = new System.Drawing.Size(476, 25);
             this.workerBindingNavigator.TabIndex = 0;
             this.workerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -127,6 +118,16 @@ namespace autorepair
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // workerBindingSource
+            // 
+            this.workerBindingSource.DataMember = "worker";
+            this.workerBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // kursachDataSet
+            // 
+            this.kursachDataSet.DataSetName = "KursachDataSet";
+            this.kursachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -171,6 +172,7 @@ namespace autorepair
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -213,10 +215,45 @@ namespace autorepair
             this.workerBindingNavigatorSaveItem.Text = "Save Data";
             this.workerBindingNavigatorSaveItem.Click += new System.EventHandler(this.workerBindingNavigatorSaveItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.AutoSize = false;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "All",
+            "Active"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(75, 23);
+            this.toolStripComboBox1.Text = "All";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButton1.Text = "Find tasks";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // workerDataGridView
             // 
             this.workerDataGridView.AutoGenerateColumns = false;
             this.workerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.workerDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.workerDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.workerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -266,26 +303,92 @@ namespace autorepair
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.workerBindingNavigator);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.toolStripContainer1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2Collapsed = true;
+            this.splitContainer1.Size = new System.Drawing.Size(800, 460);
+            this.splitContainer1.SplitterDistance = 389;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(788, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(12, 12);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(150, 46);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // workerTableAdapter
+            // 
+            this.workerTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.autoTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.brandsTableAdapter = null;
+            this.tableAdapterManager.current_taskTableAdapter = null;
+            this.tableAdapterManager.ownerTableAdapter = null;
+            this.tableAdapterManager.taskTableAdapter = null;
+            this.tableAdapterManager.type_of_repairTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = autorepair.KursachDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.workerTableAdapter = this.workerTableAdapter;
+            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 460);
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
             this.Load += new System.EventHandler(this.WorkerForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingNavigator)).EndInit();
             this.workerBindingNavigator.ResumeLayout(false);
             this.workerBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerDataGridView)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +417,12 @@ namespace autorepair
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

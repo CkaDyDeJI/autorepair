@@ -29,84 +29,51 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("mainTable");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("auto");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("owner");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("task");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("worker");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Autorepair", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Основное содержимое");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Машины");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Владельцы");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Задачи");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Работники");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Таблицы", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode4,
             treeNode5});
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContentForm));
-            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
-            this.contentSplit = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.AddNewBrandButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddNewBreakTypeButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.main_informationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewBrandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewBrokeTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.userLabel = new System.Windows.Forms.Label();
             this.kursachDataSet = new autorepair.KursachDataSet();
-            this.autoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.main_informationTableAdapter = new autorepair.KursachDataSetTableAdapters.main_informationTableAdapter();
             this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
             this.autoTableAdapter = new autorepair.KursachDataSetTableAdapters.autoTableAdapter();
             this.ownerTableAdapter = new autorepair.KursachDataSetTableAdapters.ownerTableAdapter();
             this.taskTableAdapter = new autorepair.KursachDataSetTableAdapters.taskTableAdapter();
             this.workerTableAdapter = new autorepair.KursachDataSetTableAdapters.workerTableAdapter();
-            this.toolStripContainer2.ContentPanel.SuspendLayout();
-            this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contentSplit)).BeginInit();
-            this.contentSplit.Panel1.SuspendLayout();
-            this.contentSplit.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).BeginInit();
+            this.main_informationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStripContainer2
-            // 
-            // 
-            // toolStripContainer2.ContentPanel
-            // 
-            this.toolStripContainer2.ContentPanel.Controls.Add(this.contentSplit);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(870, 572);
-            this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer2.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(870, 597);
-            this.toolStripContainer2.TabIndex = 6;
-            this.toolStripContainer2.Text = "toolStripContainer2";
-            // 
-            // toolStripContainer2.TopToolStripPanel
-            // 
-            this.toolStripContainer2.TopToolStripPanel.Controls.Add(this.toolStrip1);
-            // 
-            // contentSplit
-            // 
-            this.contentSplit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentSplit.Location = new System.Drawing.Point(0, 0);
-            this.contentSplit.Name = "contentSplit";
-            // 
-            // contentSplit.Panel1
-            // 
-            this.contentSplit.Panel1.Controls.Add(this.treeView1);
-            this.contentSplit.Size = new System.Drawing.Size(870, 572);
-            this.contentSplit.SplitterDistance = 144;
-            this.contentSplit.TabIndex = 0;
             // 
             // treeView1
             // 
@@ -114,108 +81,101 @@
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Node1";
-            treeNode1.Text = "mainTable";
+            treeNode1.Text = "Основное содержимое";
             treeNode2.Name = "Node2";
-            treeNode2.Text = "auto";
+            treeNode2.Text = "Машины";
             treeNode3.Name = "Node3";
-            treeNode3.Text = "owner";
+            treeNode3.Text = "Владельцы";
             treeNode4.Name = "Node4";
-            treeNode4.Text = "task";
+            treeNode4.Text = "Задачи";
             treeNode5.Name = "Node5";
-            treeNode5.Text = "worker";
+            treeNode5.Text = "Работники";
             treeNode6.Name = "Node0";
-            treeNode6.Text = "Autorepair";
+            treeNode6.Text = "Таблицы";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(144, 572);
+            this.treeView1.Size = new System.Drawing.Size(150, 285);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
-            // toolStrip1
+            // menuStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1,
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(272, 25);
-            this.toolStrip1.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripComboBox1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(870, 27);
+            this.menuStrip1.Stretch = false;
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripDropDownButton1
+            // toolStripMenuItem1
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddNewBrandButton,
-            this.AddNewBreakTypeButton});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(108, 22);
-            this.toolStripDropDownButton1.Text = "Добавить новое";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewBrandToolStripMenuItem,
+            this.addNewBrokeTypeToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 23);
+            this.toolStripMenuItem1.Text = "Add new";
             // 
-            // AddNewBrandButton
+            // addNewBrandToolStripMenuItem
             // 
-            this.AddNewBrandButton.Name = "AddNewBrandButton";
-            this.AddNewBrandButton.Size = new System.Drawing.Size(240, 22);
-            this.AddNewBrandButton.Text = "Добавить новую марку";
-            this.AddNewBrandButton.Click += new System.EventHandler(this.AddNewBrandButtonToolStripMenuItem_Click);
+            this.addNewBrandToolStripMenuItem.Name = "addNewBrandToolStripMenuItem";
+            this.addNewBrandToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.addNewBrandToolStripMenuItem.Text = "Добавить нового произв";
+            this.addNewBrandToolStripMenuItem.Click += new System.EventHandler(this.AddNewBrandButtonToolStripMenuItem_Click);
             // 
-            // AddNewBreakTypeButton
+            // addNewBrokeTypeToolStripMenuItem
             // 
-            this.AddNewBreakTypeButton.Name = "AddNewBreakTypeButton";
-            this.AddNewBreakTypeButton.Size = new System.Drawing.Size(240, 22);
-            this.AddNewBreakTypeButton.Text = "Добавить новый тип поломки";
-            this.AddNewBreakTypeButton.Click += new System.EventHandler(this.AddNewBreakTypeButton_Click);
+            this.addNewBrokeTypeToolStripMenuItem.Name = "addNewBrokeTypeToolStripMenuItem";
+            this.addNewBrokeTypeToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.addNewBrokeTypeToolStripMenuItem.Text = "Добавить новый тип поломки";
+            this.addNewBrokeTypeToolStripMenuItem.Click += new System.EventHandler(this.AddNewBreakTypeButton_Click);
             // 
-            // toolStripButton1
+            // toolStripComboBox1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(98, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
-            // toolStripButton2
+            // fileSystemWatcher1
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // main_informationBindingSource
+            // splitContainer1
             // 
-            this.main_informationBindingSource.DataMember = "main_information";
-            this.main_informationBindingSource.DataSource = this.kursachDataSet;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 27);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.userLabel);
+            this.splitContainer1.Size = new System.Drawing.Size(150, 570);
+            this.splitContainer1.SplitterDistance = 285;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // userLabel
+            // 
+            this.userLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.userLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.userLabel.Location = new System.Drawing.Point(0, 258);
+            this.userLabel.Margin = new System.Windows.Forms.Padding(15);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.userLabel.Size = new System.Drawing.Size(150, 23);
+            this.userLabel.TabIndex = 0;
             // 
             // kursachDataSet
             // 
             this.kursachDataSet.DataSetName = "KursachDataSet";
             this.kursachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // autoBindingSource
-            // 
-            this.autoBindingSource.DataMember = "auto";
-            this.autoBindingSource.DataSource = this.kursachDataSet;
-            // 
-            // ownerBindingSource
-            // 
-            this.ownerBindingSource.DataMember = "owner";
-            this.ownerBindingSource.DataSource = this.kursachDataSet;
-            // 
-            // taskBindingSource
-            // 
-            this.taskBindingSource.DataMember = "task";
-            this.taskBindingSource.DataSource = this.kursachDataSet;
-            // 
-            // workerBindingSource
-            // 
-            this.workerBindingSource.DataMember = "worker";
-            this.workerBindingSource.DataSource = this.kursachDataSet;
             // 
             // main_informationTableAdapter
             // 
@@ -225,6 +185,7 @@
             // 
             this.tableAdapterManager.autoTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.brandsTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.current_taskTableAdapter = null;
             this.tableAdapterManager.ownerTableAdapter = null;
@@ -249,36 +210,62 @@
             // 
             this.workerTableAdapter.ClearBeforeFill = true;
             // 
+            // main_informationBindingSource
+            // 
+            this.main_informationBindingSource.DataMember = "main_information";
+            this.main_informationBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // autoBindingSource
+            // 
+            this.autoBindingSource.DataMember = "auto";
+            this.autoBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // ownerBindingSource
+            // 
+            this.ownerBindingSource.DataMember = "owner";
+            this.ownerBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // taskBindingSource
+            // 
+            this.taskBindingSource.DataMember = "task";
+            this.taskBindingSource.DataSource = this.kursachDataSet;
+            // 
+            // workerBindingSource
+            // 
+            this.workerBindingSource.DataMember = "worker";
+            this.workerBindingSource.DataSource = this.kursachDataSet;
+            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(870, 597);
-            this.Controls.Add(this.toolStripContainer2);
+            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ContentForm";
             this.ShowIcon = false;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.ContentForm_Shown);
-            this.toolStripContainer2.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer2.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer2.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer2.ResumeLayout(false);
-            this.toolStripContainer2.PerformLayout();
-            this.contentSplit.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.contentSplit)).EndInit();
-            this.contentSplit.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workerBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -297,14 +284,14 @@
         private KursachDataSetTableAdapters.taskTableAdapter taskTableAdapter;
         private System.Windows.Forms.BindingSource workerBindingSource;
         private KursachDataSetTableAdapters.workerTableAdapter workerTableAdapter;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer2;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem AddNewBrandButton;
-        private System.Windows.Forms.ToolStripMenuItem AddNewBreakTypeButton;
-        private System.Windows.Forms.SplitContainer contentSplit;
         private System.Windows.Forms.TreeView treeView1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addNewBrandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewBrokeTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label userLabel;
     }
 }

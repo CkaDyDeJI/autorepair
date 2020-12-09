@@ -22,8 +22,15 @@ namespace autorepair
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string temp = Properties.Settings.Default["connString"].ToString();
+            string temp = Holder.connectionStr;
             temp = temp.Replace("Password=erti56caru", "Password=" + textBox2.Text);
+
+            if (textBox1.Text.Contains("mechanic") != true && textBox1.Text != "firstAdm")
+            {
+                MessageBox.Show("User doesnt exist", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
 
             var testConnection = new NpgsqlConnection(temp);
 
@@ -32,15 +39,8 @@ namespace autorepair
                 testConnection.Open();
                 testConnection.Close();
 
-                if (textBox1.Text != "mechanic" && textBox1.Text != "admin")
-                {
-                    MessageBox.Show("User doesnt exist", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-
                 MessageBox.Show("You have authorize", "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                opener.user = textBox1.Text;
+                Holder.user = textBox1.Text;
                 isLogged = true;
 
                 this.Dispose();
