@@ -46,6 +46,7 @@
             this.addNewBrandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBrokeTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.userLabel = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -143,6 +143,12 @@
             this.reportButton.Size = new System.Drawing.Size(88, 20);
             this.reportButton.Text = "Create report";
             this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
+            this.toolStripMenuItem2.Text = "About";
             // 
             // fileSystemWatcher1
             // 
@@ -244,12 +250,6 @@
             // 
             this.workerBindingSource.DataMember = "worker";
             this.workerBindingSource.DataSource = this.kursachDataSet;
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
-            this.toolStripMenuItem2.Text = "About";
             // 
             // ContentForm
             // 

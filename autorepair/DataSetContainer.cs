@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using System.Windows.Forms;
 
-using Dapper;
-
 using Npgsql;
 
 

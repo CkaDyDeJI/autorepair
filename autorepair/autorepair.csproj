@@ -152,6 +152,9 @@
     <Compile Include="Forms\WorkerForm.Designer.cs">
       <DependentUpon>WorkerForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoForm.resx">
       <DependentUpon>AutoForm.cs</DependentUpon>
     </EmbeddedResource>
