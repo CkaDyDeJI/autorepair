@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Npgsql;
@@ -28,9 +21,7 @@ namespace autorepair
         {
             // TODO: This line of code loads data into the 'kursachDataSet.owner' table. You can move, or remove it, as needed.
             this.ownerTableAdapter.Fill(this.kursachDataSet.owner);
-            // TODO: This line of code loads data into the 'kursachDataSet.owner' table. You can move, or remove it, as needed.
-            this.ownerTableAdapter.Fill(this.kursachDataSet.owner);
-            toolStripStatusLabel1.Text = $"Amount of recordings = {(ownerDataGridView.RowCount).ToString()}";
+            toolStripStatusLabel1.Text = $"Amount of recordings = {(ownerDataGridView.RowCount - 1).ToString()}";
         }
 
         private void ownerBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -66,11 +57,6 @@ namespace autorepair
         {
             splitContainer1.Panel2Collapsed = true;
             container_ = null;
-
-            /*ownerDataGridView.Parent = toolStripContainer1.ContentPanel;
-            toolStripContainer1.Parent = this;
-            var temp = this.Controls.OfType <SplitContainer>().First();
-            temp.Dispose();*/
         }
     }
 }

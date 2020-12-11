@@ -21,6 +21,7 @@ namespace autorepair
         {
             // TODO: This line of code loads data into the 'kursachDataSet.main_information' table. You can move, or remove it, as needed.
             this.main_informationTableAdapter.Fill(this.kursachDataSet.main_information);
+            toolStripStatusLabel1.Text = $"Amount of recordings = {(main_informationDataGridView.RowCount - 1).ToString()}";
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

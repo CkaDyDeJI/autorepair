@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Dapper;
@@ -17,6 +11,8 @@ namespace autorepair
 {
     public partial class TaskForm : Form
     {
+        private DataSetContainer container_;
+
         public TaskForm()
         {
             InitializeComponent();
@@ -37,6 +33,7 @@ namespace autorepair
         {
             // TODO: This line of code loads data into the 'kursachDataSet.task' table. You can move, or remove it, as needed.
             this.taskTableAdapter.Fill(this.kursachDataSet.task);
+            toolStripStatusLabel1.Text = $"Amount of recordings = {(taskDataGridView.RowCount - 1).ToString()}";
         }
 
 
@@ -48,16 +45,8 @@ namespace autorepair
             using (var conn = new NpgsqlConnection(Holder.connectionStr)) {
                 NpgsqlCommand command = new NpgsqlCommand($"select distinct(owner.fio) from owner full join auto on auto.owner = owner.id full join task on task.auto_id = auto.id where description = '{toolStripComboBox1.SelectedItem.ToString()}'");
 
-                command.Connection = conn;
-
-                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
-
-                adapter.Fill(dataSet);
-
-                var source = new BindingSource();
-                source.DataSource = dataSet.Tables[0];
-                dataGridView1.DataSource = source;
+                container_= new DataSetContainer(command, conn);
+                dataGridView1.DataSource = container_.source;
 
                 MessageBox.Show($"There are {dataGridView1.RowCount} owners with this type of broken stuff", "Found!",
                     MessageBoxButtons.OK);
@@ -77,6 +66,7 @@ namespace autorepair
         private void button1_Click(object sender, EventArgs e)
         {
             splitContainer1.Panel2Collapsed = true;
+            container_ = null;
         }
     }
 }

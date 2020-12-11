@@ -34,12 +34,6 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Владельцы");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Задачи");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Работники");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Таблицы", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,23 +74,26 @@
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Font = new System.Drawing.Font("Dubai", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
+            treeNode1.Name = "Node0";
             treeNode1.Text = "Основное содержимое";
-            treeNode2.Name = "Node2";
+            treeNode2.Name = "Node1";
             treeNode2.Text = "Машины";
-            treeNode3.Name = "Node3";
+            treeNode3.Name = "Node2";
             treeNode3.Text = "Владельцы";
-            treeNode4.Name = "Node4";
+            treeNode4.Name = "Node3";
             treeNode4.Text = "Задачи";
-            treeNode5.Name = "Node5";
+            treeNode5.Name = "Node4";
             treeNode5.Text = "Работники";
-            treeNode6.Name = "Node0";
-            treeNode6.Text = "Таблицы";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(150, 286);
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(167, 207);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
@@ -149,6 +146,7 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
             this.toolStripMenuItem2.Text = "About";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // fileSystemWatcher1
             // 
@@ -169,19 +167,19 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.userLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(150, 573);
-            this.splitContainer1.SplitterDistance = 286;
+            this.splitContainer1.Size = new System.Drawing.Size(167, 573);
+            this.splitContainer1.SplitterDistance = 207;
             this.splitContainer1.TabIndex = 3;
             // 
             // userLabel
             // 
             this.userLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.userLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.userLabel.Location = new System.Drawing.Point(0, 260);
+            this.userLabel.Location = new System.Drawing.Point(0, 339);
             this.userLabel.Margin = new System.Windows.Forms.Padding(15);
             this.userLabel.Name = "userLabel";
             this.userLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.userLabel.Size = new System.Drawing.Size(150, 23);
+            this.userLabel.Size = new System.Drawing.Size(167, 23);
             this.userLabel.TabIndex = 0;
             // 
             // saveFileDialog1
@@ -259,6 +257,7 @@
             this.ClientSize = new System.Drawing.Size(870, 597);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

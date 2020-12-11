@@ -1,7 +1,6 @@
 ﻿using Npgsql;
 
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 
@@ -9,6 +8,8 @@ namespace autorepair
 {
     public partial class WorkerForm : Form
     {
+        private DataSetContainer container_;
+
         public WorkerForm()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace autorepair
         {
             // TODO: This line of code loads data into the 'kursachDataSet.worker' table. You can move, or remove it, as needed.
             this.workerTableAdapter.Fill(this.kursachDataSet.worker);
-
+            toolStripStatusLabel1.Text = $"Amount of recordings = {(workerDataGridView.RowCount - 1).ToString()}";
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -42,24 +43,17 @@ namespace autorepair
                     command.CommandText += " and current_task.isComplited = false";
                 }
 
-                command.Connection = conn;
+                container_ = new DataSetContainer(command, conn);
+                dataGridView1.DataSource = container_.source;
 
-                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
-
-                adapter.Fill(dataSet);
-
-                var source = new BindingSource();
-                source.DataSource = dataSet.Tables[0];
-                dataGridView1.DataSource = source;
-
-                MessageBox.Show($"Worker with Id {toolStripTextBox1.Text} has {dataGridView1.RowCount - 1} task(s)", "Found!", MessageBoxButtons.OK);
+                MessageBox.Show($"Worker with Id {toolStripTextBox1.Text} has {dataGridView1.RowCount} task(s)", "Found!", MessageBoxButtons.OK);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             splitContainer1.Panel2Collapsed = true;
+            container_ = null;
         }
     }
 }

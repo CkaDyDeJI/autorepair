@@ -34,6 +34,7 @@ namespace autorepair
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.main_informationBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.main_informationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,6 +88,9 @@ namespace autorepair
             this.Worker_fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.main_informationTableAdapter = new autorepair.KursachDataSetTableAdapters.main_informationTableAdapter();
             this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
+            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingNavigator)).BeginInit();
             this.main_informationBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).BeginInit();
@@ -100,6 +104,10 @@ namespace autorepair
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStripContainer2.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer2.ContentPanel.SuspendLayout();
+            this.toolStripContainer2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_informationBindingNavigator
@@ -251,6 +259,7 @@ namespace autorepair
             // 
             // main_informationDataGridView
             // 
+            this.main_informationDataGridView.AllowUserToResizeRows = false;
             this.main_informationDataGridView.AutoGenerateColumns = false;
             this.main_informationDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.main_informationDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -272,11 +281,19 @@ namespace autorepair
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.main_informationDataGridView.DataSource = this.main_informationBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.main_informationDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.main_informationDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_informationDataGridView.Location = new System.Drawing.Point(0, 0);
             this.main_informationDataGridView.Name = "main_informationDataGridView";
             this.main_informationDataGridView.RowHeadersVisible = false;
-            this.main_informationDataGridView.Size = new System.Drawing.Size(965, 425);
+            this.main_informationDataGridView.Size = new System.Drawing.Size(965, 403);
             this.main_informationDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -390,7 +407,7 @@ namespace autorepair
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.main_informationDataGridView);
+            this.splitContainer1.Panel1.Controls.Add(this.toolStripContainer2);
             // 
             // splitContainer1.Panel2
             // 
@@ -404,7 +421,7 @@ namespace autorepair
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(559, 62);
+            this.textBox1.Location = new System.Drawing.Point(621, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(126, 20);
             this.textBox1.TabIndex = 3;
@@ -413,7 +430,7 @@ namespace autorepair
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-M-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(691, 62);
+            this.dateTimePicker1.Location = new System.Drawing.Point(753, 51);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 2;
@@ -421,7 +438,7 @@ namespace autorepair
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(12, 62);
+            this.addButton.Location = new System.Drawing.Point(12, 51);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 1;
@@ -544,6 +561,41 @@ namespace autorepair
             this.tableAdapterManager.UpdateOrder = autorepair.KursachDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.workerTableAdapter = null;
             // 
+            // toolStripContainer2
+            // 
+            // 
+            // toolStripContainer2.BottomToolStripPanel
+            // 
+            this.toolStripContainer2.BottomToolStripPanel.Controls.Add(this.statusStrip1);
+            // 
+            // toolStripContainer2.ContentPanel
+            // 
+            this.toolStripContainer2.ContentPanel.Controls.Add(this.main_informationDataGridView);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(965, 403);
+            this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer2.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer2.Name = "toolStripContainer2";
+            this.toolStripContainer2.Size = new System.Drawing.Size(965, 425);
+            this.toolStripContainer2.TabIndex = 2;
+            this.toolStripContainer2.Text = "toolStripContainer2";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(965, 22);
+            this.statusStrip1.TabIndex = 0;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +622,13 @@ namespace autorepair
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStripContainer2.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer2.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer2.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer2.ResumeLayout(false);
+            this.toolStripContainer2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -629,5 +688,8 @@ namespace autorepair
         private DataGridViewTextBoxColumn Worker_id;
         private DataGridViewTextBoxColumn Worker_fio;
         private ToolStripButton updateButton;
+        private ToolStripContainer toolStripContainer2;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

@@ -228,5 +228,12 @@ namespace autorepair
 
             document.Save();
         }
+
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show ("Program for administrating auto repair shop.\nAll rights reserved.\n(c) Shmelev Grigory 2020", "About",
+                MessageBoxButtons.OK);
+        }
     }
 }
