@@ -45,10 +45,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBrandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBrokeTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.reportButton = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.userLabel = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.kursachDataSet = new autorepair.KursachDataSet();
             this.main_informationTableAdapter = new autorepair.KursachDataSetTableAdapters.main_informationTableAdapter();
             this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
@@ -61,6 +62,7 @@
             this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -94,7 +96,7 @@
             treeNode6.Text = "Таблицы";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(150, 285);
+            this.treeView1.Size = new System.Drawing.Size(150, 286);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
@@ -102,10 +104,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.toolStripComboBox1});
+            this.reportButton,
+            this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(870, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(870, 24);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -116,7 +119,7 @@
             this.addNewBrandToolStripMenuItem,
             this.addNewBrokeTypeToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
             this.toolStripMenuItem1.Text = "Add new";
             // 
             // addNewBrandToolStripMenuItem
@@ -133,10 +136,13 @@
             this.addNewBrokeTypeToolStripMenuItem.Text = "Добавить новый тип поломки";
             this.addNewBrokeTypeToolStripMenuItem.Click += new System.EventHandler(this.AddNewBreakTypeButton_Click);
             // 
-            // toolStripComboBox1
+            // reportButton
             // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.reportButton.BackColor = System.Drawing.SystemColors.Control;
+            this.reportButton.Name = "reportButton";
+            this.reportButton.Size = new System.Drawing.Size(88, 20);
+            this.reportButton.Text = "Create report";
+            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
             // 
             // fileSystemWatcher1
             // 
@@ -146,7 +152,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 27);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -157,20 +163,24 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.userLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(150, 570);
-            this.splitContainer1.SplitterDistance = 285;
+            this.splitContainer1.Size = new System.Drawing.Size(150, 573);
+            this.splitContainer1.SplitterDistance = 286;
             this.splitContainer1.TabIndex = 3;
             // 
             // userLabel
             // 
             this.userLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.userLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.userLabel.Location = new System.Drawing.Point(0, 258);
+            this.userLabel.Location = new System.Drawing.Point(0, 260);
             this.userLabel.Margin = new System.Windows.Forms.Padding(15);
             this.userLabel.Name = "userLabel";
             this.userLabel.Padding = new System.Windows.Forms.Padding(5);
             this.userLabel.Size = new System.Drawing.Size(150, 23);
             this.userLabel.TabIndex = 0;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "\"Word files (*.docx)|*.docx\"";
             // 
             // kursachDataSet
             // 
@@ -235,6 +245,12 @@
             this.workerBindingSource.DataMember = "worker";
             this.workerBindingSource.DataSource = this.kursachDataSet;
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
+            this.toolStripMenuItem2.Text = "About";
+            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,8 +306,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addNewBrandToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewBrokeTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label userLabel;
+        private System.Windows.Forms.ToolStripMenuItem reportButton;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

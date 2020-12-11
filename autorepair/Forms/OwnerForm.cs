@@ -54,11 +54,10 @@ namespace autorepair
                 else
                     command = new NpgsqlCommand($"select auto.creator, auto.model, auto.id, auto.creation_date, task.description from auto left join task on task.auto_id = auto.id where owner = (select id from owner where fio ='{findTextBox.Text}')");
 
-                command.Connection = conn;
                 container_ = new DataSetContainer(command, conn);
                 dataGridView1.DataSource = container_.source;
 
-                MessageBox.Show($"owner with parameter {findTextBox} (id or fio) has {dataGridView1.RowCount - 1} car(s)", "Found!", MessageBoxButtons.OK);
+                MessageBox.Show($"owner with parameter {findTextBox.Text} (id or fio) has {dataGridView1.RowCount - 1} car(s)", "Found!", MessageBoxButtons.OK);
             }
         }
 

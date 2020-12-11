@@ -80,11 +80,4 @@ namespace autorepair
             }
         }
     }
-
-
-    class forOwners
-    {
-        public string fio { get; set; }
-        public string adress { get; set; }
-    }
 }

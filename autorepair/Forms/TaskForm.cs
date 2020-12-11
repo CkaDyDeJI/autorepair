@@ -73,6 +73,7 @@ namespace autorepair
             }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             splitContainer1.Panel2Collapsed = true;
