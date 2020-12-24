@@ -21,7 +21,15 @@ namespace autorepair
         public ContentForm()
         {
             InitializeComponent();
+
+            dataGridView1.RowCount = 2;
+            dataGridView1.ScrollBars = ScrollBars.None;
+            dataGridView1.ClientSize = new Size(dataGridView1.Width, dataGridView1.Rows.GetRowsHeight(new DataGridViewElementStates()) + dataGridView1.ColumnHeadersHeight);
+
+            dataGridView1.Rows[0].Cells[0].Value = "Имя таблицы";
+            dataGridView1.Rows[1].Cells[0].Value = "Количество записей внутри";
         }
+
 
         private void ContentForm_Shown(object sender, EventArgs e)
         {
@@ -227,6 +235,7 @@ namespace autorepair
             document.InsertTable (mainTable);
 
             document.Save();
+            System.Diagnostics.Process.Start(filePath);
         }
 
 
@@ -234,6 +243,105 @@ namespace autorepair
         {
             MessageBox.Show ("Program for administrating auto repair shop.\nAll rights reserved.\n(c) Shmelev Grigory 2020", "About",
                 MessageBoxButtons.OK);
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            var ownerName  = Interaction.InputBox ("Enter owner's fio");
+
+            if (ownerName != "") {
+                using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                {
+                    var temp = conn.Query<string>($"select string_agg(task.description, ', ') from owner join auto on auto.owner = owner.id join task on task.auto_id = auto.id where owner.fio = '{ownerName}'").First();
+
+                    MessageBox.Show ($"Owner named {ownerName} has following problmes with his car: \n{temp}");
+                }
+            }
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label1.Text = dataGridView1.CurrentCell.Value.ToString();
+        }
+
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            int count = 0;
+            switch (treeView1.SelectedNode.Index)
+            {
+                case 0:
+                    dataGridView1.Rows[0].Cells[1].Value = treeView1.SelectedNode.Text;
+                    using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                    {
+                        count = conn.QueryFirst<int>("select count(*) from main_information;");
+                    }
+                    dataGridView1.Rows[1].Cells[1].Value = count;
+
+                    break;
+                case 1:
+                    dataGridView1.Rows[0].Cells[1].Value = treeView1.SelectedNode.Text;
+                    using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                    {
+                        count = conn.QueryFirst<int>("select count(*) from auto;");
+                    }
+                    dataGridView1.Rows[1].Cells[1].Value = count;
+
+                    break;
+                case 2:
+                    dataGridView1.Rows[0].Cells[1].Value = treeView1.SelectedNode.Text;
+                    using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                    {
+                        count = conn.QueryFirst<int>("select count(*) from owner;");
+                    }
+                    dataGridView1.Rows[1].Cells[1].Value = count;
+
+                    break;
+                case 3:
+                    dataGridView1.Rows[0].Cells[1].Value = treeView1.SelectedNode.Text;
+                    using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                    {
+                        count = conn.QueryFirst<int>("select count(*) from task;");
+                    }
+                    dataGridView1.Rows[1].Cells[1].Value = count;
+
+                    break;
+                case 4:
+                    dataGridView1.Rows[0].Cells[1].Value = treeView1.SelectedNode.Text;
+                    using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                    {
+                        count = conn.QueryFirst<int>("select count(*) from worker;");
+                    }
+                    dataGridView1.Rows[1].Cells[1].Value = count;
+
+                    break;
+            }
+        }
+
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            var auto_id = Interaction.InputBox("Enter auto id");
+
+            if (auto_id != "")
+            {
+                using (var conn = new NpgsqlConnection(Holder.connectionStr))
+                {
+                    var temp = conn.Query<forFixes>($"select string_agg(concat_ws(' ', worker.firstname, worker.lastname), ', ') as worker_fio, task.end_date from worker \r\njoin current_task on current_task.worker_id = worker.id\r\njoin task on task.id = current_task.task_id \r\njoin auto on auto.id = task.auto_id\r\nwhere auto.id = {auto_id}\r\ngroup by task.end_date").First();
+
+                    MessageBox.Show($"Auto with id = {auto_id} was fixed by {temp.worker_fio} at date = {temp.end_date}.");
+                }
+            }
+        }
+
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            using (var conn = new NpgsqlConnection(Holder.connectionStr))
+            {
+                var temp = conn.Query("update current_task\r\nset isComplited = true\r\nwhere task_id = all(select id from task where end_date != null)");
+            }
         }
     }
 }

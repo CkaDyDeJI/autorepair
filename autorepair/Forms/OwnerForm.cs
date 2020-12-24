@@ -29,7 +29,6 @@ namespace autorepair
             this.Validate();
             this.ownerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.kursachDataSet);
-
         }
 
 

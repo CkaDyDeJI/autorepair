@@ -22,4 +22,11 @@
         public string fio { get; set; }
         public string adress { get; set; }
     }
+
+
+    class forFixes
+    {
+        public string worker_fio { get; set; }
+        public string end_date { get; set; }
+    }
 }

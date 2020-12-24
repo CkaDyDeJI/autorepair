@@ -58,7 +58,7 @@ namespace autorepair
 
         private void MechanicForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("closing this window without logging will close whole application.\nAre you sure that you want to quit?", "Warning",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Closing this window without logging will close whole application.\nAre you sure that you want to quit?", "Warning",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.Dispose();
                 opener_.Dispose();

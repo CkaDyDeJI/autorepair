@@ -20,20 +20,17 @@ namespace autorepair
         }
 
 
-        private void taskBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.taskBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.kursachDataSet);
-
-        }
-
-
         private void TaskForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kursachDataSet.task_view' table. You can move, or remove it, as needed.
+            this.task_viewTableAdapter.Fill(this.kursachDataSet.task_view);
+            // TODO: This line of code loads data into the 'kursachDataSet.task_view' table. You can move, or remove it, as needed.
+            this.task_viewTableAdapter.Fill(this.kursachDataSet.task_view);
+            // TODO: This line of code loads data into the 'kursachDataSet.task_view' table. You can move, or remove it, as needed.
+            this.task_viewTableAdapter.Fill(this.kursachDataSet.task_view);
             // TODO: This line of code loads data into the 'kursachDataSet.task' table. You can move, or remove it, as needed.
-            this.taskTableAdapter.Fill(this.kursachDataSet.task);
-            toolStripStatusLabel1.Text = $"Amount of recordings = {(taskDataGridView.RowCount - 1).ToString()}";
+            this.task_viewTableAdapter.Fill(this.kursachDataSet.task_view);
+            toolStripStatusLabel1.Text = $"Amount of recordings = {(task_viewDataGridView.RowCount - 1).ToString()}";
         }
 
 
@@ -67,6 +64,13 @@ namespace autorepair
         {
             splitContainer1.Panel2Collapsed = true;
             container_ = null;
+        }
+
+        private void task_viewBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.task_viewBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.kursachDataSet);
         }
     }
 }

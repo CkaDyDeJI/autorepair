@@ -37,7 +37,7 @@ namespace autorepair
 
             using (var conn = new NpgsqlConnection(Holder.connectionStr))
             {
-                NpgsqlCommand command = new NpgsqlCommand($"select task.* from task join current_task on current_task.task_id = task.id where current_task.worker_id = {toolStripTextBox1.Text}");
+                NpgsqlCommand command = new NpgsqlCommand($"select auto.id, auto.creator, auto.model, task.start_date, task.end_date, task.cost, task.description from task \r\njoin current_task on current_task.task_id = task.id \r\njoin auto on auto.id = task.auto_id\r\nwhere current_task.worker_id = {toolStripTextBox1.Text}");
 
                 if (toolStripComboBox1.SelectedIndex == 1) {
                     command.CommandText += " and current_task.isComplited = false";

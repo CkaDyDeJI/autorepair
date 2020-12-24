@@ -1,4 +1,8 @@
-﻿namespace autorepair
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+
+namespace autorepair
 {
     partial class ContentForm
     {
@@ -34,17 +38,25 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Владельцы");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Задачи");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Работники");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBrandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBrokeTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fieldName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userLabel = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.kursachDataSet = new autorepair.KursachDataSet();
             this.main_informationTableAdapter = new autorepair.KursachDataSetTableAdapters.main_informationTableAdapter();
             this.tableAdapterManager = new autorepair.KursachDataSetTableAdapters.TableAdapterManager();
@@ -57,12 +69,14 @@
             this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).BeginInit();
@@ -93,15 +107,19 @@
             treeNode3,
             treeNode4,
             treeNode5});
-            this.treeView1.Size = new System.Drawing.Size(167, 207);
+            this.treeView1.Size = new System.Drawing.Size(167, 319);
             this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
             this.reportButton,
+            this.toolStripMenuItem5,
             this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -132,6 +150,13 @@
             this.addNewBrokeTypeToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.addNewBrokeTypeToolStripMenuItem.Text = "Добавить новый тип поломки";
             this.addNewBrokeTypeToolStripMenuItem.Click += new System.EventHandler(this.AddNewBreakTypeButton_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(110, 20);
+            this.toolStripMenuItem3.Text = "Owner\'s problem";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // reportButton
             // 
@@ -166,16 +191,76 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.userLabel);
             this.splitContainer1.Size = new System.Drawing.Size(167, 573);
-            this.splitContainer1.SplitterDistance = 207;
+            this.splitContainer1.SplitterDistance = 319;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 150);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label1.Size = new System.Drawing.Size(0, 18);
+            this.label1.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 21;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fieldName,
+            this.value});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(167, 150);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // fieldName
+            // 
+            this.fieldName.HeaderText = "Property";
+            this.fieldName.Name = "fieldName";
+            this.fieldName.ReadOnly = true;
+            // 
+            // value
+            // 
+            this.value.HeaderText = "Value";
+            this.value.Name = "value";
+            this.value.ReadOnly = true;
             // 
             // userLabel
             // 
             this.userLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.userLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.userLabel.Location = new System.Drawing.Point(0, 339);
+            this.userLabel.Location = new System.Drawing.Point(0, 227);
             this.userLabel.Margin = new System.Windows.Forms.Padding(15);
             this.userLabel.Name = "userLabel";
             this.userLabel.Padding = new System.Windows.Forms.Padding(5);
@@ -185,6 +270,13 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "\"Word files (*.docx)|*.docx\"";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(81, 20);
+            this.toolStripMenuItem4.Text = "Find worker";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // kursachDataSet
             // 
@@ -203,6 +295,7 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.current_taskTableAdapter = null;
             this.tableAdapterManager.ownerTableAdapter = null;
+            this.tableAdapterManager.task_viewTableAdapter = null;
             this.tableAdapterManager.taskTableAdapter = null;
             this.tableAdapterManager.type_of_repairTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = autorepair.KursachDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -249,6 +342,13 @@
             this.workerBindingSource.DataMember = "worker";
             this.workerBindingSource.DataSource = this.kursachDataSet;
             // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(57, 20);
+            this.toolStripMenuItem5.Text = "Update";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,8 +371,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main_informationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoBindingSource)).EndInit();
@@ -310,5 +412,12 @@
         private System.Windows.Forms.ToolStripMenuItem reportButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fieldName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn value;
+        private Label label1;
+        private ToolStripMenuItem toolStripMenuItem4;
+        private ToolStripMenuItem toolStripMenuItem5;
     }
 }
